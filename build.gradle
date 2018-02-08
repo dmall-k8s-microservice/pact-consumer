@@ -1,6 +1,10 @@
 buildscript {
     repositories {
+        maven {
+            url 'http://ec2-54-95-33-138.ap-northeast-1.compute.amazonaws.com:8081/repository/maven-public'
+        }
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath 'au.com.dius:pact-jvm-provider-gradle_2.12:3.5.12'
@@ -23,7 +27,11 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
-     maven { url "http://repo.maven.apache.org/maven2" }
+    maven {
+        url 'http://ec2-54-95-33-138.ap-northeast-1.compute.amazonaws.com:8081/repository/maven-public'
+    }
+    mavenCentral()
+    jcenter()
 }
 
 dependencies {
